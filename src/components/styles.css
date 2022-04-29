@@ -1,0 +1,146 @@
+.video-container {
+  display: flex;
+  justify-content: center;
+  margin: 40px auto;
+}
+
+.video-list-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-column-gap: 0.2rem;
+  grid-row-gap: 0.05rem;
+  min-width: 1400px;
+  overflow: none;
+}
+
+.thumbnail-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.thumbnail-wrapper {
+  display: flex;
+  flex-direction: column;
+  transition: all 0.4s;
+  width: 200px;
+  background: white;
+}
+
+.thumbnail-hidden {
+  opacity: 0%;
+}
+
+.thumbnail-hidden .thumbnail-add {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  background: rgb(228, 225, 225);
+
+  font-size: 12px;
+  color: #666;
+
+  border-radius: 2px;
+  margin: 5px 5px;
+
+  height: 16px;
+}
+
+.thumbnail-hidden .thumbnail-add #icon {
+  margin-left: 25%;
+  margin-right: 5px;
+  width: 12px;
+  height: 12px;
+}
+
+.thumbnail-wrapper:hover {
+  transform: scale(1.2);
+}
+
+.thumbnail-wrapper:hover > .thumbnail-hidden {
+  opacity: 100%;
+  /* transform: scale(0.9); */
+}
+
+.thumbnail {
+  height: 120px;
+}
+
+.thumbnail-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  padding-top: 5px;
+}
+
+.avatar-wrapper {
+  width: 48px;
+  height: 48px;
+  margin-right: 5px;
+  padding-top: 1px;
+
+  border-radius: 50%;
+}
+
+.thumbnail-description {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: 12px;
+}
+.thumbnail-description div:first-child {
+  font-weight: bold;
+}
+
+.thumbnail-text {
+  width: 80%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  text-align: start;
+}
+
+.thumbnail-text:not(:first-child) {
+  -webkit-line-clamp: 1;
+  font-size: 10px;
+  color: #666;
+}
+
+.thumbnail-wrapper:hover > .thumbnail-info > .avatar-wrapper {
+  transform: scale(0.8);
+}
+
+.thumbnail-wrapper:hover
+  > .thumbnail-info
+  > .thumbnail-description
+  > .thumbnail-text {
+  transform: scale(0.8);
+  margin-left: -15px;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 1350px) {
+  .video-list-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    min-width: 800px;
+  }
+}
+
+@media (max-width: 850px) {
+  .video-list-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-width: 400px;
+  }
+}
